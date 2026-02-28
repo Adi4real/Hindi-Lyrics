@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>मुख्य पोर्टल - Hindi Songs</title>
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Homepage specific styling */
+        .home-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .box-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            width: 100%;
+            max-width: 1000px;
+            margin-top: 40px;
+        }
+
+        .menu-link {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .portal-box {
+            background-color: #2a2a2a;
+            border-radius: 15px;
+            padding: 50px 20px;
+            text-align: center;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            height: 100%;
+        }
+
+        .portal-box:hover {
+            transform: translateY(-10px);
+            background-color: #333;
+            border-color: #e53935;
+        }
+
+        .portal-box .icon {
+            font-size: 50px;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .portal-box h2 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .empty-box {
+            cursor: default;
+            opacity: 0.6;
+        }
+
+        .empty-box:hover {
+            transform: none;
+            border-color: transparent;
+            background-color: #2a2a2a;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="home-container">
+        <h1>संगीत पोर्टल</h1>
+        
+        <div class="box-grid">
+            <a href="Hindi Aatmik Geetmala.html" class="menu-link">
+                <div class="portal-box">
+                    <span class="icon">🎵</span>
+                    <h2>Hindi Atmik Geetmala</h2>
+                    <p>गीतों का संग्रह</p>
+                </div>
+            </a>
+
+            <div class="portal-box empty-box">
+                <span class="icon">📁</span>
+                <h2>आगामी संग्रह</h2>
+                <p>जल्द आ रहा है</p>
+            </div>
+
+            <div class="portal-box empty-box">
+                <span class="icon">✨</span>
+                <h2>विशेष गीत</h2>
+                <p>जल्द आ रहा है</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

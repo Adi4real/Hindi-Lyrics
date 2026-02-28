@@ -1,0 +1,200 @@
+/* Import Mukta Font for clean Hindi Typography */
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@400;700&display=swap');
+
+body { 
+    font-family: 'Mukta', sans-serif; 
+    margin: 0; 
+    background-color: #f4f4f9; 
+    overflow: hidden; /* Prevents whole-page scrolling */
+}
+
+/* Page Containers */
+.page { height: 100vh; width: 100vw; display: flex; }
+.hidden { display: none !important; }
+
+/* --- HOME PAGE SEARCH --- */
+#home-page {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-container { 
+    max-width: 600px; 
+    width: 90%;
+    text-align: center; 
+}
+
+h1 { color: #2c3e50; margin-bottom: 20px; }
+
+input { 
+    font-family: 'Mukta', sans-serif; 
+    width: 100%; 
+    padding: 15px; 
+    font-size: 1.2rem; 
+    border-radius: 8px; 
+    border: 1px solid #ccc; 
+    outline: none;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.list-container { 
+    list-style: none; 
+    padding: 0; 
+    margin-top: 20px; 
+    max-height: 60vh; 
+    overflow-y: auto; 
+    text-align: left; 
+    background: white; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
+}
+
+.list-container li { 
+    padding: 15px; 
+    border-bottom: 1px solid #eee; 
+    cursor: pointer; 
+    font-size: 1.2rem; 
+    color: #333; 
+    transition: 0.2s;
+}
+
+/* Highlight for the currently selected song */
+.active-song {
+    background-color: #2980b9 !important;
+    color: white !important;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+.list-container li:hover { background: #f0f4f8; color: #2980b9; }
+
+/* --- PPT PAGE LAYOUT --- */
+#ppt-page { background-color: #000; color: #fff; }
+
+/* Sidebar: Left-aligned vertical controls */
+.sidebar { 
+    width: 320px; 
+    background: #111; 
+    padding: 20px; 
+    border-right: 1px solid #333; 
+    display: flex; 
+    flex-direction: column; 
+    height: 100vh;
+    box-sizing: border-box;
+}
+
+/* Sidebar Search Bar */
+.sidebar input { 
+    background: #222; 
+    color: #fff; 
+    border: 1px solid #444; 
+    padding: 12px; 
+    border-radius: 6px; 
+    margin-bottom: 10px; 
+    font-size: 1rem;
+}
+
+/* Sidebar Song List (Scrollable area) */
+.mini {
+    max-height: 35vh !important; 
+    overflow-y: auto;
+    background: transparent;
+    margin-bottom: 15px;
+    box-shadow: none;
+}
+
+.mini li { 
+    background: transparent; 
+    color: #ffffff !important; 
+    font-size: 1rem; 
+    padding: 10px; 
+    border-bottom: 1px solid #222; 
+}
+
+.mini li:hover { background: #2c3e50; border-radius: 4px; }
+
+/* Navigation Section (Vertical Buttons) */
+.sidebar-label {
+    color: #666;
+    font-size: 0.8rem;
+    margin: 15px 0 10px 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.ppt-nav-labels { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 10px; 
+    overflow-y: auto;
+    flex-grow: 1; /* Pushes the home button to bottom */
+}
+
+.nav-item { 
+    padding: 12px 15px; 
+    background: #1a1a1a; 
+    color: #999; 
+    border-radius: 6px; 
+    cursor: pointer; 
+    font-size: 1.1rem; 
+    border: 1px solid #333; 
+    transition: 0.3s;
+    text-align: left;
+}
+
+.nav-item:hover { background: #222; color: #fff; border-color: #555; }
+
+.nav-item.active { 
+    background: #ffffff; 
+    color: #000; 
+    font-weight: bold; 
+    border-color: #fff; 
+}
+
+/* Back to Home Button */
+.home-btn { 
+    font-family: 'Mukta', sans-serif; 
+    background: #c0392b; 
+    color: white; 
+    border: none; 
+    padding: 12px; 
+    cursor: pointer; 
+    border-radius: 6px; 
+    margin-top: 15px;
+    font-size: 1rem;
+    transition: 0.2s;
+}
+
+.home-btn:hover { background: #e74c3c; }
+
+/* --- THE LYRIC VIEWER --- */
+.ppt-viewer { 
+    flex-grow: 1; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    background: #000;
+    padding: 40px;
+    text-align: center;
+}
+
+.slide-text { 
+    width: 95%; 
+    max-height: 90vh;
+    font-weight: 700; 
+    white-space: pre-wrap; /* Essential for maintaining PDF line breaks */
+    color: #ffffff;
+    line-height: 1.2;
+    text-shadow: 4px 4px 12px rgba(0,0,0,0.9);
+    transition: font-size 0.2s ease-in-out; /* Smooth resizing */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Custom Scrollbar for Sidebar and Lists */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #444; border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: #666; }
